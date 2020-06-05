@@ -1,0 +1,43 @@
+{
+    "name": "phpgithook/module-interface",
+    "type": "project",
+    "description": "PHPGithook - Interfaces  to modules",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Aarhof",
+            "email": "martin.aarhof@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "symfony/console": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGithook\\ModuleInterface\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan": "^0.12.25"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPGithook\\ModuleInterface\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "fix": [
+            "vendor/bin/php-cs-fixer --allow-risky=yes -q fix",
+            "vendor/bin/phpstan analyse -l max src tests",
+            "vendor/bin/phpunit"
+        ],
+        "test": [
+            "vendor/bin/php-cs-fixer --allow-risky=yes --dry-run --diff --stop-on-violation fix",
+            "vendor/bin/phpstan analyse -l max src tests",
+            "vendor/bin/phpunit"
+        ]
+    }
+}
