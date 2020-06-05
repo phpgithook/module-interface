@@ -21,7 +21,8 @@
     "require-dev": {
         "phpunit/phpunit": "^9.1",
         "friendsofphp/php-cs-fixer": "^2.16",
-        "phpstan/phpstan": "^0.12.25"
+        "phpstan/phpstan": "^0.12.25",
+        "league/flysystem": "^1.0"
     },
     "autoload-dev": {
         "psr-4": {
